@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "place-market-padawan"
+    }
+  },
+  "defaultProject": "place-market-padawan",
+  "cli": {
+    "analytics": false
+  }
 }
