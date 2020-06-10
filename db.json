@@ -1,0 +1,13 @@
+{
+  "proveedores": [
+    {
+      "id": 1,
+      "nombre": "json-server",
+      "servicio": "typicode",
+      "descripcion": "des",
+      "CIF": "tee",
+      "telefono": "ytrw",
+      "correo": "desggr"
+    }
+  ]
+}
