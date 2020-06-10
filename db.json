@@ -1,19 +1,13 @@
 {
-  "posts": [
+  "proveedores": [
     {
       "id": 1,
       "nombre": "json-server",
-      "precio": "typicode"
+      "servicio": "typicode",
+      "descripcion": "des",
+      "CIF": "tee",
+      "telefono": "ytrw",
+      "correo": "desggr"
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
