@@ -1,7 +1,7 @@
 export class Proveedor {
 
     constructor (
-    public id: number,
+    public _id: number,
     public nombre: "",
     public servicio: "",
     public descripcion: "",
