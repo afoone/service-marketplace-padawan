@@ -1,0 +1,7 @@
+ <h1><p>Lista proveedores</p></h1>
+
+ <ul>
+     <li *ngFor="let item of (proveedores$ | async)">
+        {{item.nombre}}
+     </li>
+ </ul>
