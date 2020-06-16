@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProvedorComponent } from './component/proveedores/proveedor/proveedor.component';
 import {ProveedoresService} from "./service/proveedores.service";
+import { HttpClientModule } from '@angular/common/http';
 import { ProveedorListComponent } from './components/proveedores/proveedor/proveedor-list/proveedor-list.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { ProveedorListComponent } from './components/proveedores/proveedor/prove
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [ProveedoresService],
   bootstrap: [AppComponent]
