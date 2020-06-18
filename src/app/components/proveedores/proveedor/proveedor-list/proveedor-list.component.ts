@@ -37,7 +37,7 @@ export class ProveedorListComponent implements OnInit {
 
   delete(e: Event, id: string) {
     // e.preventDefault();solo para enlaces o que tengan comportamiento por defecto
-    this.proveedoresService.deleteProveedor(id).subscribe(
+    this.proveedoresService.deleteProveedor(e, id).then(
       () => this.fetchProveedores()
     )
 

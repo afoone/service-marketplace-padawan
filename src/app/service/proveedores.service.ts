@@ -22,8 +22,10 @@ export class ProveedoresService {
        'http://localhost:4000/proveedor/crear_prov', proveedor)
    }
 
-   deleteProveedor = (id: string) => {
+   
+  
+   deleteProveedor = (e: Event, id: string) => {
      return this.httpClient.delete<Proveedor>(
-       'http://localhost:4000/proveedor/borrar_prov/' + id)
-   }
+       'http://localhost:4000/proveedor/borrar_prov/' + id).toPromise()
+   } 
 }
