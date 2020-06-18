@@ -3,6 +3,6 @@
  <ul>
      <li *ngFor="let item of proveedores">
         {{item.nombre}}
-        <button class="ui button" (click)="delete($event, item._id)">Borrar</button>
+        <button class="ui button" (click)="delete(item._id)">Borrar</button>
      </li>
  </ul>

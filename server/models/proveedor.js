@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 
-const proveedorSchema = mongoose.Schema(
-    
-    {
+const proveedorSchema = mongoose.Schema( {
         nombre: String,
         servicio: String,
         descripcion: String,

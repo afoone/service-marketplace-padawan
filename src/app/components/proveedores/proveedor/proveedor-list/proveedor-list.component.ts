@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class ProveedorListComponent implements OnInit {
 
-  public proveedores:Proveedor[];
+  public proveedores: Proveedor[];
 
   constructor(private proveedoresService: ProveedoresService) { }
 
@@ -20,26 +20,17 @@ export class ProveedorListComponent implements OnInit {
   }
 
   fetchProveedores() {
-    /* this.proveedoresService.getProveedores().subscribe(
-      (res) =>  
-      {
-        this.proveedores = res
-      }
-    ); */
-
     this.proveedoresService.getProveedores().then(
-      (res) =>  
-      {
-        this.proveedores = res
+      (res) => {
+        this.proveedores = res;
       }
-    )
+    );
   }
 
-  delete(e: Event, id: string) {
-    // e.preventDefault();solo para enlaces o que tengan comportamiento por defecto
-    this.proveedoresService.deleteProveedor(e, id).then(
+  delete(id: string) {
+    this.proveedoresService.deleteProveedor(id).then(
       () => this.fetchProveedores()
-    )
-
+    );
   }
+
 }
