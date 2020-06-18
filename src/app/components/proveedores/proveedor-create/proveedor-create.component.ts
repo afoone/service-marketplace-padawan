@@ -4,6 +4,7 @@ import { ProveedoresService } from 'src/app/service/proveedores.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-proveedor-create',
   templateUrl: './proveedor-create.component.html',

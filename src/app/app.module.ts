@@ -3,19 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProvedorComponent } from './components/proveedores/proveedor/proveedor.component';
+import { ProveedorComponent } from './components/proveedores/proveedor/proveedor.component';
 import { ProveedoresService } from './service/proveedores.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProveedorListComponent } from './components/proveedores/proveedor-list/proveedor-list.component';
 import { ProveedorCreateComponent } from './components/proveedores/proveedor-create/proveedor-create.component';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProvedorComponent,
+    ProveedorComponent,
     ProveedorListComponent,
-    ProveedorCreateComponent
+    ProveedorCreateComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
