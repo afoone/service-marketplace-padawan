@@ -59,7 +59,7 @@ const proveedorController = {
 
     deleteProveedor: (req, res) => {
         const {id} = req.params;
-        Patient.findById(id, (err, proveedor) => {
+        Proveedor.findById(id, (err, proveedor) => {
             if (err) {
                 return res.status(500).send("<h1>ERROR 500<h1>") ;
             }
@@ -71,7 +71,6 @@ const proveedorController = {
         })
       }
 
-    
 }
 
 

@@ -1,0 +1,41 @@
+<div class="cabecera"><h1>Crear Proveedor</h1></div> 
+<hr>
+<div class="contenedor">
+<div class="ui input">
+    <label><h2> Nombre</h2></label>
+    <input type="text" [(ngModel)]="nombre" placeholder="Nombre completo">
+  </div>
+  <br>
+  <div class="ui input">
+    <label><h2> Servicio</h2></label>
+    <input type="text" [(ngModel)]="servicio" placeholder="Servicio">
+  </div>
+  <br>
+  <div class="ui input">
+    <label><h2> Descripción</h2></label>
+    <input type="text" [(ngModel)]="descripcion" placeholder="Descripción">
+  </div>
+  <br>
+  <div class="ui input">
+    <label><h2> Cif</h2></label>
+    <input type="text"[(ngModel)]="cif" placeholder="Cif">
+  </div>
+  <br>
+  <div class="ui input">
+    <label><h2> Correo</h2></label>
+    <input type="text" [(ngModel)]="correo" placeholder="Email">
+  </div>
+  <br>
+  <div class="ui input">
+    <label><h2> Teléfono</h2></label>
+    <input type="text" [(ngModel)]="telefono" placeholder="Teléfono">
+  </div>
+  <br>
+  <div class="ui input">
+    <label><h2> Imagen</h2></label>
+    <input type="text" [(ngModel)]="imagen" placeholder="Ruta imagen">
+  </div>
+  <br>
+  <button class="ui button" (click)="save()">Guardar y salir</button>
+  <button class="ui button" (click)="save()">Guardar añadir otro</button>
+</div>

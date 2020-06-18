@@ -1,7 +1,8 @@
  <h1><p>Lista proveedores</p></h1>
 
  <ul>
-     <li *ngFor="let item of (proveedores$ | async)">
+     <li *ngFor="let item of proveedores">
         {{item.nombre}}
+        <button class="ui button" (click)="delete(item._id)">Borrar</button>
      </li>
  </ul>

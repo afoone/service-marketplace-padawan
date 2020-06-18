@@ -14,6 +14,16 @@ export class ProveedoresService {
    }
 
    getProveedores = () => {
-     return this.httpClient.get<Proveedor[]>("http://localhost:4000/proveedor/lista_prov")
+     return this.httpClient.get<Proveedor[]>("http://localhost:4000/proveedor/lista_prov").toPromise()
+   }
+
+   saveProveedor = (proveedor: Proveedor) => {
+     return this.httpClient.post<Proveedor>(
+       'http://localhost:4000/proveedor/crear_prov', proveedor)
+   }
+
+   deleteProveedor = (id: string) => {
+     return this.httpClient.delete<Proveedor>(
+       'http://localhost:4000/proveedor/borrar_prov/' + id)
    }
 }

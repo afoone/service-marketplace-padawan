@@ -1,14 +1,17 @@
 export class Proveedor {
 
+    public _id: string
+    public nombre: string
+    public servicio: string
+    public descripcion: string
+    public cif: string
+    public correo: string
+    public telefono: string
+    public imagen: string
+
     constructor (
-    public _id: number,
-    public nombre: "",
-    public servicio: "",
-    public descripcion: "",
-    public cif: "",
-    public correo: "",
-    public telefono: "",
-    public imagen: ""
+    
+
 
 ){} 
 }

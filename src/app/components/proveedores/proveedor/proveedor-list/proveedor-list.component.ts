@@ -11,12 +11,35 @@ import { Observable } from 'rxjs';
 })
 export class ProveedorListComponent implements OnInit {
 
-  public proveedores$:Observable<Proveedor[]>;
+  public proveedores:Proveedor[];
 
   constructor(private proveedoresService: ProveedoresService) { }
 
   ngOnInit(): void {
-    this.proveedores$ = this.proveedoresService.getProveedores();
+    this.fetchProveedores();
   }
 
+  fetchProveedores() {
+    /* this.proveedoresService.getProveedores().subscribe(
+      (res) =>  
+      {
+        this.proveedores = res
+      }
+    ); */
+
+    this.proveedoresService.getProveedores().then(
+      (res) =>  
+      {
+        this.proveedores = res
+      }
+    )
+  }
+
+  delete(e: Event, id: string) {
+    // e.preventDefault();solo para enlaces o que tengan comportamiento por defecto
+    this.proveedoresService.deleteProveedor(id).subscribe(
+      () => this.fetchProveedores()
+    )
+
+  }
 }
