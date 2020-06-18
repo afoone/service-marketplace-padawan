@@ -7,6 +7,7 @@ import { ProveedorCreateComponent } from './component/proveedores/proveedor-crea
 const routes: Routes = [
   {path:'proveedor/lista', component: ProveedorListComponent},
   {path:'proveedor/crear', component: ProveedorCreateComponent},
+  {path:'proveedor/editar/:id', component: ProveedorCreateComponent}
 ];
 
 @NgModule({

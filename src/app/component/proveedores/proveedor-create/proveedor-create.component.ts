@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Proveedor} from 'src/app/models/proveedores/proveedor';
 import { ProveedoresService } from 'src/app/service/proveedores.service';
 import { Router, ActivatedRoute } from '@angular/router'
+
+
 @Component({
   selector: 'app-proveedor-create',
   templateUrl: './proveedor-create.component.html',
   styleUrls: ['./proveedor-create.component.css']
 })
+
 export class ProveedorCreateComponent implements OnInit {
 
   public nombre: string = "";
@@ -19,11 +22,25 @@ export class ProveedorCreateComponent implements OnInit {
   private id : string;
   
   constructor(private proveedorService: ProveedoresService,
-    private router: Router) { }
+    private router: Router, private ruta: ActivatedRoute) { }
 
   ngOnInit(): void {
-  }
+    this.id = this.ruta.snapshot.paramMap.get('id');
 
+    if (this.id) {
+      this.proveedorService.getProveedor(this.id).then(
+        res => {
+          this.nombre = res.nombre;
+          this.servicio = res.servicio;
+          this.descripcion = res.descripcion;
+          this.cif = res.cif;
+          this.correo = res.correo;
+          this.telefono = res.telefono;
+          this.imagen = res.imagen;
+        }
+      )
+    }
+  }
   save = () => {
     const newProveedor: Proveedor = new Proveedor();
     newProveedor.nombre = this.nombre;
@@ -33,12 +50,18 @@ export class ProveedorCreateComponent implements OnInit {
     newProveedor.correo = this.correo;
     newProveedor.telefono = this.telefono;
     newProveedor.imagen = this.imagen;
+    if (this.id) {
+      this.proveedorService.updateProveedor(this.id, newProveedor).then(
+        () => {        
+          this.router.navigate(['proveedor/lista'])// redigir al proveedor
+      }
+    )}else { 
     this.proveedorService.saveProveedor(newProveedor).subscribe(
-      () => {
-        
+      () => {        
         this.router.navigate(['proveedor/lista'])
       }
     )
+    }
     console.log(newProveedor);
   }
 }

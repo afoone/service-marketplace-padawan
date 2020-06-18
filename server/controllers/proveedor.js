@@ -44,7 +44,7 @@ const proveedorController = {
             Proveedor.findById(params.id, (err, proveedor) => {
                 if (err) {
                     return res.status(404)("<h1>No Encontrado<h1>")
-                }
+                }//if para modificar solo un elemento si está vacio
                 proveedor.nombre = body.nombre;
                 proveedor.servicio = body.servicio;
                 proveedor.descripcion = body.descripcion;

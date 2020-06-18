@@ -28,4 +28,17 @@ export class ProveedoresService {
      return this.httpClient.delete<Proveedor>(
        'http://localhost:4000/proveedor/borrar_prov/' + id).toPromise()
    } 
+
+   updateProveedor = (id, proveedor: Proveedor) => {
+     return this.httpClient.put<Proveedor>(
+      'http://localhost:4000/proveedor/modificar_prov/' + id, proveedor).toPromise()
+   }
+
+  getProveedor = (id) => {
+    return this.httpClient.get<Proveedor>("http://localhost:4000/proveedor/" + id) .toPromise()
+  }
+
+
+
+  
 }
