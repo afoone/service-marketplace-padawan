@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ProveedorComponent implements OnInit {
 
   public proveedor: Proveedor;
-  public id: string;
+  public id: string; 
 
   constructor(private proveedorService: ProveedoresService,
               private route: ActivatedRoute) {
@@ -19,16 +19,18 @@ export class ProveedorComponent implements OnInit {
 
   ngOnInit(): void {
     // Ir a por el proveedor y poner en la variable
-    /* this.fetchProveedor(); */
+  /* this.fetchProveedor(); */
    this.id = this.route.snapshot.paramMap.get('id');
+  /*  this.proveedor; */
   
   }
 
-  fetchProveedor() {
-    this.proveedorService.getProveedor(this.id).then(
+  fetchProveedor(id: string) {
+    this.proveedorService.getProveedor(id).then(
      res => {
        this.proveedor = res;
      }
    )
   }
+  
 }
