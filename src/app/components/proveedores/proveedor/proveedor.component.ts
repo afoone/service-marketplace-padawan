@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProveedorComponent implements OnInit {
 
-  public proveedor: Proveedor;
+  public proveedor: Proveedor = new Proveedor();
   public id: string; 
 
   constructor(private proveedorService: ProveedoresService,
@@ -19,9 +19,8 @@ export class ProveedorComponent implements OnInit {
 
   ngOnInit(): void {
     // Ir a por el proveedor y poner en la variable
-  /* this.fetchProveedor(); */
    this.id = this.route.snapshot.paramMap.get('id');
-  /*  this.proveedor; */
+   this.fetchProveedor(this.id);
   
   }
 
