@@ -33,32 +33,6 @@ ul {
     background-color: #111111;
   }
  .logo img{
-<<<<<<< HEAD
-    padding-left: 1em;
-    padding-top: 5.5em;
-    width: 200px;
-    height: auto;
- }
-
- .cabecera {
-    position: fixed;
-    opacity: 0.8;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    background-color: #333333;
- }
-
- .head {
-   display: flex;
-   align-items: center;
-   background-color: grey;
- }
-
- .nombre {
-   padding-left: 50%px;
- }
-=======
      padding-left: 1em;
      padding-top: 1em;
      width: 120px;
@@ -74,4 +48,3 @@ ul {
 
  }
 
->>>>>>> 6d80262c7378716d7793106f6a9e95f0f43c9bde
