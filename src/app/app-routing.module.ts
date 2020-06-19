@@ -6,12 +6,10 @@ import { ProveedorComponent } from './components/proveedores/proveedor/proveedor
 
 const routes: Routes = [
   { path: '', component: ProveedorListComponent},
-  
   { path: 'proveedor/lista', component: ProveedorListComponent },
   { path: 'proveedor/crear', component: ProveedorCreateComponent },
   { path: 'proveedor/editar/:id', component: ProveedorCreateComponent },
-  { path: 'proveedor/:id',component: ProveedorComponent}
-  
+  { path: 'proveedor/:id', component: ProveedorComponent}
 ];
 
 @NgModule({

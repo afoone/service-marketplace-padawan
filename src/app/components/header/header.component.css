@@ -1,3 +1,14 @@
+cabecera{
+  display: flex;
+ align-items: center;
+ background-color: #111111;
+
+}
+
+.nombreEmpresa{
+  align-items:flex-start;
+  color: antiquewhite;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -5,11 +16,11 @@ ul {
     overflow: hidden;
     background-color: #333333;
   }
-  
+
   li {
     float: left;
   }
-  
+
   li a {
     display: block;
     color: white;
@@ -17,11 +28,12 @@ ul {
     padding: 16px;
     text-decoration: none;
   }
-  
+
   li a:hover {
     background-color: #111111;
   }
  .logo img{
+<<<<<<< HEAD
     padding-left: 1em;
     padding-top: 5.5em;
     width: 200px;
@@ -46,3 +58,20 @@ ul {
  .nombre {
    padding-left: 50%px;
  }
+=======
+     padding-left: 1em;
+     padding-top: 1em;
+     width: 120px;
+     height: 120px;
+ }
+ .navegacion{
+  justify-content: center;
+
+ }
+ .content{
+    padding-bottom: 2em;
+   text-align:  center;
+
+ }
+
+>>>>>>> 6d80262c7378716d7793106f6a9e95f0f43c9bde
