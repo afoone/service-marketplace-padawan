@@ -1,12 +1,5 @@
  <h1><p>Lista proveedores</p></h1>
 
- <ul>
-     <li *ngFor="let item of proveedores">
-        
-        <button class="ui button" (click)="delete(item._id)">Borrar</button>
-        <button class="ui button" routerLink="/proveedor/proveedor._id" >Editar</button>
-     </li>
- </ul>
  <div class="ui cards" *ngFor="let item of proveedores">
     <div class="card">
       <div class="content">
@@ -22,29 +15,10 @@
         </div>
       </div>
       <div class="extra content">
-        <div class="ui two buttons">
+        <div class="ui three buttons">
           <div class="ui basic green button">Editar</div>
           <div class="ui basic red button">Borrar</div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="content">
-        <img class="right floated mini ui image" src="/images/avatar/large/jenny.jpg">
-        <div class="header">
-          Jenny Hess
-        </div>
-        <div class="meta">
-          New Member
-        </div>
-        <div class="description">
-          Jenny wants to add you to the group <b>best friends</b>
-        </div>
-      </div>
-      <div class="extra content">
-        <div class="ui two buttons">
-          <div class="ui basic green button">Approve</div>
-          <div class="ui basic red button">Decline</div>
+          <div class="ui basic orange button">Valorar</div>
         </div>
       </div>
     </div>
