@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Proveedor } from 'src/app/models/proveedores/proveedor';
 import { ProveedoresService } from 'src/app/service/proveedores.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 
@@ -23,8 +24,8 @@ export class ProveedorCreateComponent implements OnInit {
   private id: string;
 
   constructor(private proveedorService: ProveedoresService,
-              private router: Router,
-              private ruta: ActivatedRoute) { }
+    private router: Router,
+    private ruta: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id = this.ruta.snapshot.paramMap.get('id');
@@ -43,7 +44,24 @@ export class ProveedorCreateComponent implements OnInit {
     }
   }
 
-  save = () => {
+
+  saveAndRedirect = () => {
+    this.save(() => this.router.navigate(['proveedor/lista']));
+  }
+
+  saveAndStay = () => {
+    this.save(() => {
+      this.nombre = '';
+      this.servicio = '';
+      this.descripcion = '';
+      this.cif = '';
+      this.correo = '';
+      this.telefono = '';
+      this.imagen = '';
+    });
+  }
+
+  private save = (finish: any) => {
     const newProveedor = new Proveedor();
     newProveedor.nombre = this.nombre;
     newProveedor.servicio = this.servicio;
@@ -56,18 +74,19 @@ export class ProveedorCreateComponent implements OnInit {
       // estamos editando
       this.proveedorService.updateProveedor(this.id, newProveedor).then(
         () => {
-          this.router.navigate(['proveedor/lista']); // redigir al proveedor
+          finish();
         }
       );
     } else {
       // estamos creando
       this.proveedorService.saveProveedor(newProveedor).then(
         () => {
-          this.router.navigate(['proveedor/lista']);
+          finish();
         }
       );
     }
   }
+
 
 
 }

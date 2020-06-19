@@ -1,4 +1,4 @@
-<div class="cabecera"><h1>Crear Proveedor</h1></div> 
+<div class="cabecera"><h1>Crear Proveedor</h1></div>
 <hr>
 <div class="contenedor">
 <div class="ui input">
@@ -36,6 +36,6 @@
     <input type="text" [(ngModel)]="imagen" placeholder="Ruta imagen">
   </div>
   <br>
-  <button class="ui button" (click)="save()">Guardar y salir</button>
-  <button class="ui button" (click)="save()">Guardar añadir otro</button>
+  <button class="ui button" (click)="saveAndRedirect()">Guardar y salir</button>
+  <button class="ui button" (click)="saveAndStay()">Guardar añadir otro</button>
 </div>
