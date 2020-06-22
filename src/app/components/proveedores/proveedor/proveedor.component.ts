@@ -22,6 +22,7 @@ export class ProveedorComponent implements OnInit {
     // Ir a por el proveedor y poner en la variable
     this.id = this.route.snapshot.paramMap.get('id');
     this.fetchProveedor(this.id);
+    console.log(this.id);
   }
 
   fetchProveedor(id: string) {

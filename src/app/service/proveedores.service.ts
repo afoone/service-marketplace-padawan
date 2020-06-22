@@ -39,6 +39,6 @@ export class ProveedoresService {
    }
 
     getProveedor = (id: string) => {
-    return this.httpClient.get<Proveedor>('http://localhost:4000/proveedor/' + id).toPromise();
+      return this.httpClient.get<Proveedor>('http://localhost:4000/proveedor/' + id).toPromise();
   }
 }

@@ -1,32 +1,33 @@
-<div>
-<div class="ui section divider"></div>
- <div class="ui centered nombreLista">Lista proveedores</div>
- <div class="ui section divider"></div>
- 
- <div class="ui five column grid">
-  <div class="ui cards" *ngFor="let item of proveedores">
-     <div class="card">
-       <div class="content">
-         <img class="right floated mini ui image" src="{{item.imagen}}">
-         <div class="header">
-          {{item.nombre}}
+<div class="contenedor">
+  <div class="ui section divider"></div>
+   <div class="ui centered nombreLista">Lista proveedores</div>
+   <div class="ui section divider"></div>
+  
+   <div class="ui five column grid">
+    <div class="ui cards" *ngFor="let item of proveedores">
+       <div class="card">
+         <div class="content">
+           <img class="right floated mini ui image" src="{{item.imagen}}">
+           <div class="header">
+            {{item.nombre}}
+           </div>
+           <div class="meta">
+            Valoraciones postivas
+           </div>
+           <div class="description">
+            {{item.descripcion}}
+           </div>
          </div>
-         <div class="meta">
-          Valoraciones postivas
-         </div>
-         <div class="description">
-          {{item.descripcion}}
-         </div>
-       </div>
-       <div class="extra content">
-         <div class="ui three buttons">
-          <div class="ui basic green button">Ver</div>
-          <div class="ui basic red button">Comparar</div>
-          <div class="ui basic orange button">Valorar</div>
+         <div class="extra content">
+           <div class="ui three buttons ">
+            <div class="ui basic green button " >
+              <button (click)="ver(item)">Ver</button>
+            </div>
+            <div class="ui basic red button" >Editar</div>
+            <div class="ui basic orange button">Borrar</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-</div>
 </div>
