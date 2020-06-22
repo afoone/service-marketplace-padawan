@@ -1,6 +1,23 @@
+/* colors
+    #3c4245
+    #5f6769
+    #719192
+    #dfcdc3
+*/
+
 .cabecera {
     text-align: center;
 }
 .contenedor {
     padding-left: 5%;
+}
+
+h1 {
+    color:     #719192;
+    font-size: 200%;
+
+}
+
+h3 {
+    color: #3c4245;
 }

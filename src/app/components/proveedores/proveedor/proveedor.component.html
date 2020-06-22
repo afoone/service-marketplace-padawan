@@ -1,4 +1,45 @@
-<hr>
-<p>Proveedor</p>
-<hr>
-<h1>{{proveedor.nombre}}</h1>
+<div class="ui divider"></div>
+<div class="cabecera"><h1>Proveedor</h1></div>
+<div class="ui divider"></div>
+
+<div class="ui centered card">
+    <div class="image">
+      <img src="/assets/img/imagen_proveedor.png">
+    </div>
+    <div class="content">
+      <a class="header"><h1>{{proveedor.nombre}}</h1></a>
+    </div>
+      <div class="content">
+    <a class="header">
+        Servicios disponibles<br>
+        {{proveedor.servicio}}</a>
+    <div class="meta">
+      <span class="date">
+        C.I.F.:&nbsp;
+        {{proveedor.cif}}</span>
+    </div>
+    <div class="meta">
+      <span class="date">
+        Correo:&nbsp;
+        {{proveedor.correo}}</span>
+    </div>
+    <div class="meta">
+      <span class="date">
+        Teléfono:&nbsp;
+        {{proveedor.telefono}}</span>
+    </div>
+    <div class="description">
+       Detalles:&nbsp;
+       {{proveedor.descripcion}}
+    </div>
+
+  </div>
+  <div class="extra content">
+    <a>
+      <button class="ui button">Hacer favorito</button>
+      <i class="user icon"></i>
+      22 Favoritos
+    </a>
+  </div>
+  </div>
+
