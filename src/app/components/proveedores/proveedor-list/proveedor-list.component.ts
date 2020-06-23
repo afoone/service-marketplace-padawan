@@ -47,12 +47,8 @@ export class ProveedorListComponent implements OnInit {
     this.router.navigate(["proveedor/" + item._id]);
       }
 
-  updateProveedor(item: any, proveedor: any) {
-    this.router.navigate(["proveedor/editar/" + (item._id, proveedor)]);
+  updateProveedor(item: any) {
+    this.router.navigate(["proveedor/editar/" + (item._id)]);
   }
 
-  deleteProveedor(item: any) {
-    this.router.navigate(["proveedor/" + item._id]);
-    return this.delete(item.id);
-  }
 }
