@@ -17,7 +17,7 @@ export class ProveedorListComponent implements OnInit {
   public proveedor: Proveedor;
   public proveedorService: any;
   public id: string;
-  
+
   constructor(private proveedoresService: ProveedoresService,
     private route: ActivatedRoute,
     private router: Router) { }
@@ -36,23 +36,23 @@ export class ProveedorListComponent implements OnInit {
     );
   }
 
-    ver(item) {
-      this.router.navigate(["proveedor/" + item._id])
-console.log(item);
-        }
-  fetchProveedor(id: string) {
-    console.log(this.id);
-    this.proveedorService.getProveedor(this.id).then(
-      res => {
-        this.proveedor = res;
-      }
-    );
-  } 
-
   delete(id: string) {
     this.proveedoresService.deleteProveedor(id).then(
       () => this.fetchProveedores()
     );
   }
 
+
+  getProveedor(item: any) {
+    this.router.navigate(["proveedor/" + item._id]);
+      }
+
+  updateProveedor(item: any, proveedor: any) {
+    this.router.navigate(["proveedor/editar/" + (item._id, proveedor)]);
+  }
+
+  deleteProveedor(item: any) {
+    this.router.navigate(["proveedor/" + item._id]);
+    return this.delete(item.id);
+  }
 }
