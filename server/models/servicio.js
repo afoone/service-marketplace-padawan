@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const servicioSchema = mongoose.Schema( {
         nombre: String,
         precio: String,
-        descripcion: String
+        descripcion: String,
+        imagen: String
 
     }
 )

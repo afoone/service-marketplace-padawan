@@ -9,6 +9,7 @@ const servicioController = {
     servicio.nombre = body.nombre;
     servicio.precio = body.precio;
     servicio.descripcion = body.descripcion;
+    servicio.imagen = body.imagen;
 
     // guardamos en mongo
     servicio.save()
@@ -43,8 +44,9 @@ const servicioController = {
         return res.status(404)("<h1>No Encontrado<h1>")
       }//if para modificar solo un elemento si está vacio
       servicio.nombre = body.nombre;
-    servicio.precio = body.precio;
+      servicio.precio = body.precio;
     servicio.descripcion = body.descripcion;
+    servicio.imagen = body.imagen;
       servicio.save().then(
         p => {return res.status(201).jsonp(p)}
       )
