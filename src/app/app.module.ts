@@ -10,6 +10,7 @@ import { ProveedorListComponent } from './components/proveedores/proveedor-list/
 import { ProveedorCreateComponent } from './components/proveedores/proveedor-create/proveedor-create.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HeaderComponent } from './components/header/header.component';
     ProveedorComponent,
     ProveedorListComponent,
     ProveedorCreateComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

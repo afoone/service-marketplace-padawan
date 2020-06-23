@@ -14,9 +14,14 @@
   padding-top: 2em;
 }
 
-.logo img{
+.logo {
   padding-left: 1em;
   padding-top: 3em;
+  width: 300px;
+  height: auto;
+}
+
+.bordes img{
   width: 300px;
   height: auto;
   border-radius: 1.5em;

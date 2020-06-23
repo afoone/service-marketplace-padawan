@@ -2,7 +2,7 @@
   <div class="ui section divider"></div>
    <div class="ui centered nombreLista">Lista proveedores</div>
    <div class="ui section divider"></div>
-  
+
    <div class="ui five column grid">
     <div class="ui cards" *ngFor="let item of proveedores">
        <div class="card">
@@ -20,11 +20,9 @@
          </div>
          <div class="extra content">
            <div class="ui three buttons ">
-            <div class="ui basic green button " >
-              <button (click)="ver(item)">Ver</button>
-            </div>
-            <div class="ui basic red button" >Editar</div>
-            <div class="ui basic orange button">Borrar</div>
+            <div class="ui basic green button" (click)="getProveedor(item)">Ver</div>
+            <div class="ui basic red button" (click)="updateProveedor(proveedor, item)">Editar</div>
+            <div class="ui basic orange button" (click)="deleteProveedor(item)">Borrar</div>
           </div>
         </div>
       </div>
