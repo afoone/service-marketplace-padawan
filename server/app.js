@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const proveedorRouter = require('./routes/proveedor');
-const proveedorRouter = require('./routes/servicio');
+const servicioRouter = require('./routes/servicio');
 const cors = require('cors');
 
 // Para que pueda decodificar el body en json en la request
