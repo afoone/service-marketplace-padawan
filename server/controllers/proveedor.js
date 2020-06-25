@@ -56,7 +56,7 @@ const proveedorController = {
         p => {return res.status(201).jsonp(p)}
       )
       .catch(
-        err => { return res.status(500).jsonp({msg: "error actualizando proveedore"})}
+        err => { return res.status(500).jsonp({msg: "error actualizando proveedores"})}
       )
     })
   },

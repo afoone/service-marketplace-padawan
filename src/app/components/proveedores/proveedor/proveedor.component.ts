@@ -15,7 +15,6 @@ export class ProveedorComponent implements OnInit {
 
   constructor(private proveedorService: ProveedoresService,
               private route: ActivatedRoute) {
-    console.log('mensaje', proveedorService.mensaje);
   }
 
   ngOnInit(): void {

@@ -9,15 +9,11 @@ export class ProveedoresService {
 
   public proveedores: Proveedor[];
 
-  public mensaje = "Vacio";
-
   constructor(private httpClient: HttpClient) {
 
    }
 
    getProveedores = () => {
-     this.mensaje = "he pasado por la lista";
-     console.log("mensaje en singleton", this.mensaje)
      return this.httpClient.get<Proveedor[]>('http://localhost:4000/proveedor/').toPromise();
    }
 

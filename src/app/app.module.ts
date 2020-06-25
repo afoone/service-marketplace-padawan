@@ -11,6 +11,9 @@ import { ProveedorCreateComponent } from './components/proveedores/proveedor-cre
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
+import { UsuarioComponent } from './components/usuarios/usuario/usuario.component';
+import { UsuarioCreateComponent } from './components/usuarios/usuario-create/usuario-create.component';
+import { UsuarioListComponent } from './components/usuarios/usuario-list/usuario-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { HomeComponent } from './components/home/home.component';
     ProveedorListComponent,
     ProveedorCreateComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    UsuarioComponent,
+    UsuarioCreateComponent,
+    UsuarioListComponent
   ],
   imports: [
     BrowserModule,
