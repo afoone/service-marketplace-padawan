@@ -9,5 +9,15 @@
       "telefono": "ytrw",
       "correo": "desggr"
     }
+  ] ,
+  "servicios": [
+    {
+      "id": 1,
+      "nombre": "json-server",
+      "precio": "60€",
+      "descripcion": "des",
+      "imagen": "tee"
+    }
   ]
+
 }
