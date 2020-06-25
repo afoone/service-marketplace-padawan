@@ -11,6 +11,9 @@ import { ProveedorCreateComponent } from './components/proveedores/proveedor-cre
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
+import { ServicioComponent } from './components/servicios/servicio/servicio.component';
+import { ServicioCreateComponent } from './components/servicios/servicio-create/servicio-create.component';
+import { ServicioListComponent } from './components/servicios/servicio-list/servicio-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { HomeComponent } from './components/home/home.component';
     ProveedorListComponent,
     ProveedorCreateComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    ServicioComponent,
+    ServicioCreateComponent,
+    ServicioListComponent
   ],
   imports: [
     BrowserModule,
