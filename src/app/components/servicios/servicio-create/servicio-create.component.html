@@ -1,0 +1,25 @@
+<div class="ui divider"></div>
+<div class="cabecera"><h1>Crear Servicio</h1></div>
+<hr>
+<div class="contenedor">
+<div class="ui form">
+    <label><h3> Nombre</h3></label>
+    <input type="text" [(ngModel)]="nombre" placeholder="Nombre completo">
+  </div>
+  <br>
+  <div class="ui form">
+    <label><h3> Precio</h3></label>
+    <input type="text" [(ngModel)]="precio" placeholder="Servicio">
+  </div>
+  <br>
+  <div class="ui form">
+    <label><h3> Descripción</h3></label>
+    <input type="text" [(ngModel)]="descripcion" placeholder="Descripción">
+  </div>
+  <br>
+
+
+
+  <button class="ui button" (click)="saveAndRedirect()">Guardar y salir</button>
+  <button class="ui button" (click)="saveAndStay()">Guardar añadir otro</button>
+</div>

@@ -1,0 +1,17 @@
+.cabecera {
+  text-align: center;
+}
+.contenedor {
+  width: 90%;
+  padding-left: 5%;
+}
+
+h1 {
+  color:     #719192;
+  font-size: 200%;
+
+}
+
+h3 {
+  color: #3c4245;
+}
