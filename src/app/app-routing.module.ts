@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'proveedor/editar/:id', component: ProveedorCreateComponent },
   { path: 'proveedor/:id', component: ProveedorComponent},
 
-  { path: 'usario/lista', component: UsuarioListComponent},
+  { path: 'usuario/lista', component: UsuarioListComponent},
   { path: 'usuario/crear', component: UsuarioCreateComponent},
   { path: 'usuario/editar/:id', component: UsuarioCreateComponent},
   { path: 'usuario/:id', component: UsuarioComponent},

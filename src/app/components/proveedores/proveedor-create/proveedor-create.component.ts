@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Proveedor } from 'src/app/models/proveedores/proveedor';
 import { ProveedoresService } from 'src/app/service/proveedores.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 
@@ -24,8 +23,8 @@ export class ProveedorCreateComponent implements OnInit {
   private id: string;
 
   constructor(private proveedorService: ProveedoresService,
-    private router: Router,
-    private ruta: ActivatedRoute) { }
+              private router: Router,
+              private ruta: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id = this.ruta.snapshot.paramMap.get('id');
@@ -86,7 +85,5 @@ export class ProveedorCreateComponent implements OnInit {
       );
     }
   }
-
-
 
 }

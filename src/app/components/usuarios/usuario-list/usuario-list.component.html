@@ -1,1 +1,33 @@
-<p>usuario-list works!</p>
+<div class="contenedor">
+    <div class="ui section divider"></div>
+    <div class="ui centered nombreLista">Lista usuarios</div>
+    <div class="ui section divider"></div>
+    <div class="ui five column grid">
+    <div class="ui cards" *ngFor="let item of usuarios">
+       <div class="card">
+         <div class="content">
+           <img class="right floated mini ui image" src="/assets/img/imagen_proveedor.png">
+           <div class="header">
+            {{item.nombre}}
+           </div>
+           <div class="meta">
+            {{item.usuario}}
+           </div>
+           <div class="meta">
+            {{item.correo}}
+           </div>
+           <div class="meta">
+            {{item.roles}}
+           </div>
+         </div>
+         <div class="extra content">
+           <div class="ui three buttons ">
+            <div class="ui basic green button" (click)="getUsuario(item)">Ver</div>
+            <div class="ui basic red button" (click)="updateUsuario(item)">Editar</div>
+            <div class="ui basic orange button" (click)="delete(item._id)">Borrar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>

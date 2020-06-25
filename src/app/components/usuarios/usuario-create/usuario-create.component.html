@@ -1,1 +1,33 @@
-<p>usuario-create works!</p>
+<div class="ui divider"></div>
+<div class="cabecera"><h1>Crear Usuario</h1></div>
+<hr>
+<div class="contenedor">
+<div class="ui form">
+    <label><h3> Nombre</h3></label>
+    <input type="text" [(ngModel)]="nombre" placeholder="Nombre completo">
+  </div>
+  <br>
+  <div class="ui form">
+    <label><h3> Usuario</h3></label>
+    <input type="text" [(ngModel)]="usuario" placeholder="Servicio">
+  </div>
+  <br>
+  <div class="ui form">
+    <label><h3> Contraseña</h3></label>
+    <input type="text" [(ngModel)]="password" placeholder="Descripción">
+  </div>
+  <br>
+  <div class="ui form">
+    <label><h3> Roles</h3></label>
+    <input type="text" [(ngModel)]="roles" placeholder="Email">
+  </div>
+  <br>
+  <div class="ui form">
+    <label><h3> Correo</h3></label>
+    <input type="text" [(ngModel)]="correo" placeholder="Ruta imagen">
+  </div>
+  <br>
+  <button class="ui button" (click)="saveAndRedirect()">Guardar y salir</button>
+  <button class="ui button" (click)="saveAndStay()">Guardar añadir otro</button>
+</div>
+

@@ -19,13 +19,12 @@ export class ProveedorListComponent implements OnInit {
   public id: string;
 
   constructor(private proveedoresService: ProveedoresService,
-    private route: ActivatedRoute,
-    private router: Router) { }
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     this.fetchProveedores();
-    console.log(this.id)
   }
 
   fetchProveedores() {
@@ -45,7 +44,7 @@ export class ProveedorListComponent implements OnInit {
 
   getProveedor(item: any) {
     this.router.navigate(["proveedor/" + item._id]);
-      }
+  }
 
   updateProveedor(item: any) {
     this.router.navigate(["proveedor/editar/" + (item._id)]);
