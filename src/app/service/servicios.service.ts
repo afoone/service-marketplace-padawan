@@ -16,8 +16,8 @@ export class ServiciosService {
   }
 
   getServicios = () => {
-    this.mensaje = "he pasado por la lista";
-    console.log("mensaje en singleton", this.mensaje)
+    this.mensaje = 'he pasado por la lista';
+    console.log('mensaje en singleton', this.mensaje);
     return this.httpClient.get<Servicio[]>('http://localhost:4000/servicio/').toPromise();
   }
 
