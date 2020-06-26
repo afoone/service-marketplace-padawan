@@ -44,7 +44,7 @@ export class UsuarioListComponent implements OnInit {
   }
 
   updateUsuario(item: any) {
-    this.router.navigate(["usuario/editar/" + (item.id)]);
+    this.router.navigate(["usuario/editar/" + (item._id)]);
   }
 
 }
