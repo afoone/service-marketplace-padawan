@@ -1,1 +1,34 @@
-<p>servicio-list works!</p>
+<div class="contenedor">
+  <div class="ui section divider"></div>
+  <div class="ui centered nombreLista">Lista servicios</div>
+  <div class="ui section divider"></div>
+
+  <div class="ui five column grid">
+    <div class="ui cards" *ngFor="let item of servicio">
+      <div class="card">
+        <div class="content">
+          <img class="right floated mini ui image" src="{{item.imagen}}">
+          <div class="header">
+            {{item.nombre}}
+          </div>
+          <div class="description">
+            {{item.descripcion}}
+          </div>
+          <div class="precio">
+            {{item.precio}}
+          </div>
+          <div class="imagen">
+            {{item.imagen}}
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="ui three buttons ">
+            <div class="ui basic green button" (click)="getServicio(item)">Ver</div>
+            <div class="ui basic red button" (click)="updateServicio(item)">Editar</div>
+            <div class="ui basic orange button" (click)="delete(item._id)">Borrar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
