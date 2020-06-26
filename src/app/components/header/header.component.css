@@ -8,6 +8,9 @@
   position: fixed;
 }
 
+.ui.menu .item>a:not(.ui), .ui.menu .item>p:only-child, .ui.menu .text.item>* {
+  color: coral;
+}
 .head {
   display: grid;
   grid-template-columns: auto auto;
@@ -33,6 +36,7 @@
   color:grey;
   font-size: 500%;
 }
+/* 
 ul {
   list-style-type: none;
   margin: 0;
@@ -54,7 +58,7 @@ li {
  }
  li a:hover {
   background-color: #111111;
- }
+ } */
 
 .navegacion{
   justify-content: center;
