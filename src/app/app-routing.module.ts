@@ -15,27 +15,26 @@ import { ServicioCreateComponent } from './components/servicios/servicio-create/
 import { ServicioComponent } from './components/servicios/servicio/servicio.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', component: HomeComponent },
 
   { path: 'proveedor/lista', component: ProveedorListComponent },
   { path: 'proveedor/crear', component: ProveedorCreateComponent },
   { path: 'proveedor/editar/:id', component: ProveedorCreateComponent },
-  { path: 'proveedor/:id', component: ProveedorComponent},
+  { path: 'proveedor/:id', component: ProveedorComponent },
 
-  { path: 'usuario/lista', component: UsuarioListComponent},
-  { path: 'usuario/crear', component: UsuarioCreateComponent},
-  { path: 'usuario/editar/:id', component: UsuarioCreateComponent},
-  { path: 'usuario/:id', component: UsuarioComponent},
-  
+  { path: 'usuario/lista', component: UsuarioListComponent },
+  { path: 'usuario/crear', component: UsuarioCreateComponent },
+  { path: 'usuario/editar/:id', component: UsuarioCreateComponent },
+  { path: 'usuario/:id', component: UsuarioComponent },
+
   { path: 'servicio/lista', component: ServicioListComponent },
   { path: 'servicio/crear', component: ServicioCreateComponent },
   { path: 'servicio/editar/:id', component: ServicioCreateComponent },
-  { path: 'servicio/:id', component: ServicioComponent }
-
+  { path: 'servicio/:id', component: ServicioComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

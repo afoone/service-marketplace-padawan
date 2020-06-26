@@ -4,8 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
-    "server": "json-server --watch db.json --port 4000",
-    "nodemon": "nodemon ng server/server.js",
+    "server": "node server/server.js",
+    "nodemon": "nodemon server/server.js",
+    "start-mongo": "docker start mongo",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

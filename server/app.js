@@ -21,13 +21,9 @@ app.get("/", (req, res) => res.status(200).send("<h2>Server up and running</h2>"
 
 // Añadir las rutas de proveedor
 app.use("/proveedor/", proveedorRouter)
-app.use("/servicio/",servicioRouter)
+app.use("/servicio/", servicioRouter)
 app.use("/usuario/", usuarioRouter)
 app.use("/home/", homeRouter)
-
-
-
-
 
 module.exports = app;
 

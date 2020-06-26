@@ -32,33 +32,33 @@ const servicioController = {
 
   getServicio: (req, res) => {
     Servicio.findById(req.params.id, (err, servicio) => {
-      err ? res.status(404).send("<h1>No Encontrado<h1>")
+      err || !servicio ? res.status(404).send("<h1>No Encontrado<h1>")
         : res.status(200).jsonp(servicio);
     })
   },
 
   updateServicio: (req, res) => {
     const { body, params } = req;
-    Proveedor.findById(params.id, (err, servicio) => {
+    Servicio.findById(params.id, (err, servicio) => {
       if (err) {
         return res.status(404)("<h1>No Encontrado<h1>")
       }//if para modificar solo un elemento si está vacio
       servicio.nombre = body.nombre;
       servicio.precio = body.precio;
-    servicio.descripcion = body.descripcion;
-    servicio.imagen = body.imagen;
+      servicio.descripcion = body.descripcion;
+      servicio.imagen = body.imagen;
       servicio.save().then(
-        p => {return res.status(201).jsonp(p)}
+        p => { return res.status(200).jsonp(p) }
       )
-      .catch(
-        err => { return res.status(500).jsonp({msg: "error actualizando servicio"})}
-      )
+        .catch(
+          err => { return res.status(500).jsonp({ msg: "error actualizando servicio" }) }
+        )
     })
   },
 
   deleteServicio: (req, res) => {
     const { id } = req.params;
-    servicio.findById(id, (err, servicio) => {
+    Servicio.findById(id, (err, servicio) => {
       if (err) {
         return res.status(500).send("<h1>ERROR 500<h1>");
       }
@@ -66,14 +66,13 @@ const servicioController = {
         return res.status(404).send("<h1>No Encontrado<h1>")
       }
       servicio.remove().then(
-        p => {return res.status(200).jsonp(p);}
+        p => { return res.status(200).jsonp(p); }
       ).catch(
-        err => {return res.status(500).jsonp({msg: "error borrando servicio"})}
+        err => { return res.status(500).jsonp({ msg: "error borrando servicio" }) }
       )
     })
   }
 
 }
-
 
 module.exports = servicioController;
