@@ -43,11 +43,11 @@ export class ServicioListComponent implements OnInit {
   }
 
 
-  getProveedor(item: any) {
+  getServicio(item: any) {
     this.router.navigate(["srvicio/" + item._id]);
   }
 
-  updateProveedor(item: any) {
+  updateServicio(item: any) {
     this.router.navigate(["proveedor/editar/" + (item._id)]);
   }
 
