@@ -34,7 +34,7 @@ export class UsuarioListComponent implements OnInit {
   }
 
   delete(id: string) {
-    this.usuarioService.deleteUsuario(id).then(
+    this.usuariosService.deleteUsuario(id).then(
       () => this.fetchUsuarios()
     );
   }
