@@ -13,12 +13,13 @@ export class ServicioListComponent implements OnInit {
   public servicio: Servicio;
   public servicioService: any;
   public id: string;
+  // public borrado: boolean;
 
   constructor(
     private serviciosService: ServiciosService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -33,7 +34,11 @@ export class ServicioListComponent implements OnInit {
   }
 
   delete(id: string) {
-    this.serviciosService.deleteServicio(id).then(() => this.fetchServicios());
+    const borrado = confirm('¿Seguro que quiere borrar?');
+    if (borrado) {
+
+      this.serviciosService.deleteServicio(id).then(() => this.fetchServicios());
+    }
   }
 
   getServicio(item: any) {

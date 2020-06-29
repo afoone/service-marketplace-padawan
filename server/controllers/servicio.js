@@ -65,11 +65,13 @@ const servicioController = {
       if (!servicio) {
         return res.status(404).send("<h1>No Encontrado<h1>")
       }
-      servicio.remove().then(
-        p => { return res.status(200).jsonp(p); }
-      ).catch(
-        err => { return res.status(500).jsonp({ msg: "error borrando servicio" }) }
-      )
+
+        servicio.remove().then(
+          p => { return res.status(200).jsonp(p); }
+        ).catch(
+          err => { return res.status(500).jsonp({ msg: "error borrando servicio" }) }
+        )
+
     })
   }
 
