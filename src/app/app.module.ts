@@ -6,7 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { HeaderComponent } from './components/header/header.component';
+
 import { HomeComponent } from './components/home/home.component';
+
+import { LoginComponent } from './components/login/login.component';
 
 import { ProveedorListComponent } from './components/proveedores/proveedor-list/proveedor-list.component';
 import { ProveedorCreateComponent } from './components/proveedores/proveedor-create/proveedor-create.component';
@@ -23,6 +26,7 @@ import { ServicioComponent } from './components/servicios/servicio/servicio.comp
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +40,8 @@ import { ServicioComponent } from './components/servicios/servicio/servicio.comp
     UsuarioListComponent,
     ServicioComponent,
     ServicioCreateComponent,
-    ServicioListComponent
+    ServicioListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

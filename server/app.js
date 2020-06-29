@@ -4,6 +4,7 @@ const proveedorRouter = require('./routes/proveedor');
 const servicioRouter = require('./routes/servicio');
 const usuarioRouter = require('./routes/usuario')
 const homeRouter = require('./routes/home');
+const loginRouter = require('./routes/login');
 const cors = require('cors');
 
 // Para que pueda decodificar el body en json en la request
@@ -19,11 +20,13 @@ app.use(cors({
 
 app.get("/", (req, res) => res.status(200).send("<h2>Server up and running</h2>"));
 
-// Añadir las rutas de proveedor
+// Añadir las rutas 
+app.use("/home/", homeRouter)
+app.use("/login/", loginRouter)
 app.use("/proveedor/", proveedorRouter)
 app.use("/servicio/", servicioRouter)
 app.use("/usuario/", usuarioRouter)
-app.use("/home/", homeRouter)
+
 
 module.exports = app;
 
