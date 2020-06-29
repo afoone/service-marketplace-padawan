@@ -17,14 +17,16 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void { }
 
   login() {
-    this.loginService.login(this.usuario, this.password).then(
-      res => {
-        this.loginService.token = res.token;
-        console.log('token', this.loginService.token);
+    this.loginService
+      .login(this.usuario, this.password)
+      .then((res) => {
+        localStorage.setItem('token', res.token);
+
         this.router.navigate(['/login']);
-      }
-    );
-    .catch (console.log('Ha fallado');
+      })
+      .catch((err) => {
+        console.error('error autenticando', err);
+      });
 
     // TODO: llamar al login service (login/) (o usuario service) con un elemento de la forma:
     // {

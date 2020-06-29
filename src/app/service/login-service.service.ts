@@ -6,10 +6,11 @@ import { HttpClient } from '@angular/common/http';
 export class LoginServiceService {
 
   public token: string;
+
   constructor(private http: HttpClient) { }
-  login(user: string, password: string) {
+  login(usuario: string, password: string) {
     return this.http.post<any>('http://localhost:4000/login',
-      { user, password }
+      { usuario, password }
     ).toPromise();
   }
 }
