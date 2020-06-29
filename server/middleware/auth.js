@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken')
+
 const secretKey = "dskfjlsdpkafjklsdfjlksdjf398jsdjfkl";
 
 const authorize = (req, res, next) => {
