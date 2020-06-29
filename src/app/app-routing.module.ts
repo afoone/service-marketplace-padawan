@@ -21,7 +21,7 @@ import { ServicioComponent } from './components/servicios/servicio/servicio.comp
 const routes: Routes = [
   { path: '', component: HomeComponent },
 
-  { path: 'login/', component: LoginComponent},
+  { path: 'login', component: LoginComponent},
 
   { path: 'proveedor/lista', component: ProveedorListComponent },
   { path: 'proveedor/crear', component: ProveedorCreateComponent },
