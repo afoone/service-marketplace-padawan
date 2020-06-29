@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { HeaderComponent } from './components/header/header.component';
@@ -23,9 +23,7 @@ import { UsuarioComponent } from './components/usuarios/usuario/usuario.componen
 import { ServicioListComponent } from './components/servicios/servicio-list/servicio-list.component';
 import { ServicioCreateComponent } from './components/servicios/servicio-create/servicio-create.component';
 import { ServicioComponent } from './components/servicios/servicio/servicio.component';
-
-
-
+import { AuthInterceptor } from './interceptor/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -41,15 +39,17 @@ import { ServicioComponent } from './components/servicios/servicio/servicio.comp
     ServicioComponent,
     ServicioCreateComponent,
     ServicioListComponent,
-    LoginComponent
+    LoginComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  providers: [
+    ProveedoresService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
   ],
-  providers: [ProveedoresService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

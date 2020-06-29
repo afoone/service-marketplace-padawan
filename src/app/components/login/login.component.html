@@ -1,20 +1,20 @@
-<hr>
-<hr>
+<hr />
+<hr />
 
 <h1>login works!</h1>
 
 <div class="ui divider"></div>
 <div class="cabecera"><h1>Login</h1></div>
-<hr>
+<hr />
 <div class="contenedor">
-<div class="ui form">
+  <div class="ui form">
     <label><h3>Usuario</h3></label>
-    <input type="text" placeholder="Usuario">
+    <input type="text" placeholder="Usuario" [(ngModel)]="usuario" />
   </div>
-  <br>
+  <br />
   <div class="ui form">
     <label><h3>Contraseña</h3></label>
-    <input type="text" placeholder="Contraseña">
+    <input type="text" placeholder="Contraseña" [(ngModel)]="password" />
   </div>
-  <button class="ui button" >Acceder</button>
+  <button class="ui button">Acceder</button>
 </div>

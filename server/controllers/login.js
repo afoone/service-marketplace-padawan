@@ -16,7 +16,8 @@ const loginController = {
           expiresIn: 60 * 60 * 24
         });
         return res.status(200).jsonp({
-          token, roles: usuario.roles,
+          token,
+          roles: usuario.roles,
           nombre: usuario.nombre,
           usuario: usuario.usuario
         });
