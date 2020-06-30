@@ -14,7 +14,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class ProveedorCreateComponent implements OnInit {
 
   public nombre = '';
-  public servicio = '';
   public descripcion = '';
   public cif = '';
   public correo = '';
@@ -32,7 +31,6 @@ export class ProveedorCreateComponent implements OnInit {
       this.proveedorService.getProveedor(this.id).then(
         res => {
           this.nombre = res.nombre;
-          this.servicio = res.servicio;
           this.descripcion = res.descripcion;
           this.cif = res.cif;
           this.correo = res.correo;
@@ -51,7 +49,6 @@ export class ProveedorCreateComponent implements OnInit {
   saveAndStay = () => {
     this.save(() => {
       this.nombre = '';
-      this.servicio = '';
       this.descripcion = '';
       this.cif = '';
       this.correo = '';
@@ -63,7 +60,6 @@ export class ProveedorCreateComponent implements OnInit {
   private save = (finish: any) => {
     const newProveedor = new Proveedor();
     newProveedor.nombre = this.nombre;
-    newProveedor.servicio = this.servicio;
     newProveedor.descripcion = this.descripcion;
     newProveedor.cif = this.cif;
     newProveedor.correo = this.correo;
