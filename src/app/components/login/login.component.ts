@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
       .then((res) => {
         localStorage.setItem('token', res.token);
 
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
       })
       .catch((err) => {
         console.error('error autenticando', err);
