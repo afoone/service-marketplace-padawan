@@ -36,9 +36,12 @@ export class ProveedorListComponent implements OnInit {
   }
 
   delete(id: string) {
+    const borrado = confirm('¿Seguro que quiere borrar?');
+    if (borrado) {
     this.proveedoresService.deleteProveedor(id).then(
       () => this.fetchProveedores()
     );
+    }
   }
 
 

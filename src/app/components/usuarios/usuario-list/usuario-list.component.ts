@@ -37,12 +37,15 @@ export class UsuarioListComponent implements OnInit {
   }
 
   delete(id: string) {
+    const borrado = confirm('¿Seguro que quiere borrar?');
+    if (borrado) {
     this.usuariosService
       .deleteUsuario(id)
       .then(() => this.fetchUsuarios())
       .catch(
         (err) => (this.error = 'No está autorizado para borrar elementos')
       );
+    }
   }
 
   getUsuario(item: any) {
