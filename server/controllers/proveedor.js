@@ -1,8 +1,20 @@
 const Proveedor = require('../models/proveedor');
+const Servicio = require('../models/servicio');
 
 const proveedorController = {
 
   createProveedor: (req, res) => {
+
+    // Qué tenemos que recoger del proveedor:
+    // {
+    //   "nombre": "El nuevo",
+    //     "descripcion": "curriculo",
+    //       "cif": "93048B",
+    //         "correo": "String@strings.com",
+    //           "telefono": "403948034",
+    //             "imagen": "",
+    //               "servicio": ["5ef5c173b1ae7b317e9bf328", "5efb1b36cedb57439fc1dc40"]
+    // }
     const { body } = req;
     // creamos el proveedor
     const proveedor = new Proveedor();
@@ -13,6 +25,7 @@ const proveedorController = {
     proveedor.correo = body.correo;
     proveedor.telefono = body.telefono;
     proveedor.imagen = body.imagen;
+
     // guardamos en mongo
     proveedor.save()
       .then(
@@ -24,19 +37,24 @@ const proveedorController = {
   },
 
   getProveedores: (req, res) => {
-    Proveedor.find(
+
+    Proveedor.find({}).populate('servicio').exec(
       (err, proveedores) => {
-        return err ? res.status(500).send("<h1>ERROR<h1>")
+        return err ? res.status(500).jsonp({ error: err, proveedores })
           : res.status(200).jsonp(proveedores);
       }
     )
+
+
   },
 
   getProveedor: (req, res) => {
-    Proveedor.findById(req.params.id, (err, proveedor) => {
-      err ? res.status(404).send("<h1>No Encontrado<h1>")
-        : res.status(200).jsonp(proveedor);
-    })
+    Proveedor.findById(req.params.id).populate('servicio').exec(
+      (err, proveedor) => {
+        err ? res.status(404).jsonp({ error: err })
+          : res.status(200).jsonp(proveedor);
+      }
+    )
   },
 
   updateProveedor: (req, res) => {
@@ -53,11 +71,11 @@ const proveedorController = {
       proveedor.telefono = body.telefono;
       proveedor.imagen = body.imagen;
       proveedor.save().then(
-        p => {return res.status(201).jsonp(p)}
+        p => { return res.status(201).jsonp(p) }
       )
-      .catch(
-        err => { return res.status(500).jsonp({msg: "error actualizando proveedores"})}
-      )
+        .catch(
+          err => { return res.status(500).jsonp({ msg: "error actualizando proveedores" }) }
+        )
     })
   },
 
@@ -71,9 +89,9 @@ const proveedorController = {
         return res.status(404).send("<h1>No Encontrado<h1>")
       }
       proveedor.remove().then(
-        p => {return res.status(200).jsonp(p);}
+        p => { return res.status(200).jsonp(p); }
       ).catch(
-        err => {return res.status(500).jsonp({msg: "error borrando proveedor"})}
+        err => { return res.status(500).jsonp({ msg: "error borrando proveedor" }) }
       )
     })
   }
