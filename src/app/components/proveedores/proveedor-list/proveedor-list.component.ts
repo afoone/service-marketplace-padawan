@@ -43,11 +43,11 @@ export class ProveedorListComponent implements OnInit {
 
 
   getProveedor(item: any) {
-    this.router.navigate(["proveedor/" + item._id]);
+    this.router.navigate(['proveedor/' + item._id]);
   }
 
   updateProveedor(item: any) {
-    this.router.navigate(["proveedor/editar/" + (item._id)]);
+    this.router.navigate(['proveedor/editar/' + (item._id)]);
   }
 
 }
