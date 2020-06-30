@@ -1,10 +1,9 @@
-
 <div class="cabecera">
-<div class="ui text menu">
+  <!-- <div class="ui text menu">
   <a routerLink="/" class="browse item">
     <a routerLink="/">Home</a>
   </a>
-  
+
   <div class="ui simple dropdown item" style="color: coral;">
     Proveedores
     <div class="menu">
@@ -29,16 +28,71 @@
   <a routerLink="/login" class="browse item">
     Login
   </a>
+</div> -->
+
+  <div class="pure-menu pure-menu-horizontal ">
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item pure-menu-selected ">
+        <a routerLink="/" class="pure-menu-link">Home</a>
+      </li>
+      <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+        <a href="#" id="menuLink1" class="pure-menu-link">Proveedores</a>
+        <ul class="pure-menu-children">
+          <li class="pure-menu-item">
+            <div class="item pure-menu-link">
+              <a routerLink="/proveedor/lista">Lista</a>
+            </div>
+          </li>
+          <li class="pure-menu-item">
+            <div class="item pure-menu-link">
+              <a routerLink="/proveedor/crear">Crear</a>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+        <a href="#" id="menuLink1" class="pure-menu-link">Servicios</a>
+        <ul class="pure-menu-children">
+          <li class="pure-menu-item">
+            <div class="item pure-menu-link">
+              <a routerLink="/servicio/lista">Lista</a>
+            </div>
+          </li>
+          <li class="pure-menu-item">
+            <div class="item pure-menu-link">
+              <a routerLink="/servicio/crear">Crear</a>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+        <a href="#" id="menuLink1" class="pure-menu-link">Usuarios</a>
+        <ul class="pure-menu-children">
+          <li class="pure-menu-item">
+            <div class="item pure-menu-link">
+              <a routerLink="/usuario/lista">Lista</a>
+            </div>
+          </li>
+          <li class="pure-menu-item">
+            <div class="item pure-menu-link">
+              <a routerLink="/usuario/crear">Crear</a>
+            </div>
+          </li>
+
+        </ul>
+      </li>
+      <li class="pure-menu-item ">
+        <a routerLink="/login" class="pure-menu-link">Login</a>
+      </li>
+    </ul>
+  </div>
 </div>
-</div>
 
-
-
-
- <div class="head" style="padding-top: 75px;">
-    <div class="logo">
-        <div class="bordes"><img src="./assets/img/logo.jpg"></div>
-    </div>
-    <div class="nombreEmpresa">
-        <div>Padawan Soft, S.L.A.</div>
+<div class="head" style="padding-top: 75px;">
+  <div class="logo">
+    <div class="bordes"><img src="./assets/img/logo.jpg" /></div>
+  </div>
+  <div class="nombreEmpresa">
+    <div>Padawan Soft, S.L.A.</div>
+  </div>
 </div>

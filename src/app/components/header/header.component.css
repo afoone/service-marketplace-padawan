@@ -1,4 +1,4 @@
-.cabecera{
+.cabecera {
   z-index: 1;
   opacity: 0.5;
   width: 100%;
@@ -8,11 +8,22 @@
   position: fixed;
 }
 
-.cabecera .item {
+.cabecera .pure-menu-item {
   color: coral;
   font-size: x-large;
 }
-.ui.menu .item>a:not(.ui), .ui.menu .item>p:only-child, .ui.menu .text.item>* {
+
+.cabecera .pure-menu-item > a,
+.cabecera .pure-menu-link a {
+  color: coral;
+}
+
+.cabecera .pure-menu-horizontal {
+  width: auto;
+}
+.ui.menu .item > a:not(.ui),
+.ui.menu .item > p:only-child,
+.ui.menu .text.item > * {
   color: coral;
 }
 .head {
@@ -28,24 +39,31 @@
   height: auto;
 }
 
-.bordes img{
+.bordes img {
   width: 300px;
   height: auto;
   border-radius: 1.5em;
 }
-.nombreEmpresa{
+.nombreEmpresa {
   margin-top: 1em;
   margin-left: -3em;
-  align-items:flex-start;
-  color:grey;
+  align-items: flex-start;
+  color: grey;
   font-size: 500%;
 }
 
-.navegacion{
+.navegacion {
   justify-content: center;
 }
-.content{
+.content {
   padding-bottom: 2em;
-  text-align:  center;
+  text-align: center;
 }
 
+.cabecera
+  .pure-menu-horizontal
+  .pure-menu-has-children
+  > .pure-menu-link:after {
+  content: "\25BE";
+  font-size: x-large;
+}
