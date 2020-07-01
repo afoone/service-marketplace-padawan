@@ -14,7 +14,7 @@ import { IDropdownSettings } from 'ng-multiselect-dropdown';
 
 export class ProveedorCreateComponent implements OnInit {
 
-  public dropdownList = [];
+  public servicioList: any[] = [];
   public selectedItems = [];
   public dropdownSettings: IDropdownSettings = {};
   public nombre = '';
@@ -32,27 +32,26 @@ export class ProveedorCreateComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.ruta.snapshot.paramMap.get('id');
 
-    this.dropdownList = [
-      { item_id: 1, item_text: 'Mumbai' },
-      { item_id: 2, item_text: 'Bangaluru' },
-      { item_id: 3, item_text: 'Pune' },
-      { item_id: 4, item_text: 'Navsari' },
-      { item_id: 5, item_text: 'New Delhi' }
+    this.servicioList = [
+      { "_id": 1, nombre: 'Mumbai' },
+      { "_id": 2, nombre: 'Bangaluru' },
+      { "_id": 3, nombre: 'Pune' },
+      { "_id": 4, nombre: 'Navsari' },
+      { "_id": 5, nombre: 'New Delhi' }
     ];
-    this.selectedItems = [
-      { item_id: 3, item_text: 'Pune' },
-      { item_id: 4, item_text: 'Navsari' }
-    ];
+
+
     this.dropdownSettings = {
       singleSelection: false,
-      idField: 'item_id',
-      textField: 'item_text',
-      selectAllText: 'Select All',
-      unSelectAllText: 'UnSelect All',
-      itemsShowLimit: 3,
+      idField: '_id',
+      textField: 'nombre',
+      selectAllText: 'Seleccionar todos',
+      unSelectAllText: 'Deseleccionar todos',
+      itemsShowLimit: 5,
       allowSearchFilter: true
     };
-    if(this.id) {
+
+    if (this.id) {
       this.proveedorService.getProveedor(this.id).then(
         res => {
           this.nombre = res.nombre;
@@ -65,15 +64,6 @@ export class ProveedorCreateComponent implements OnInit {
       );
     }
   }
-  onItemSelect(item: any) {
-    console.log(item);
-  }
-  onSelectAll(items: any) {
-    console.log(items);
-  }
-
-
-
 
   saveAndRedirect = () => {
     this.save(() => this.router.navigate(['proveedor/lista']));
@@ -98,6 +88,7 @@ export class ProveedorCreateComponent implements OnInit {
     newProveedor.correo = this.correo;
     newProveedor.telefono = this.telefono;
     newProveedor.imagen = this.imagen;
+    //newProveedor.servicio = this.selectedItems.map( i => i._id)
     if (this.id) {
       // estamos editando
       this.proveedorService.updateProveedor(this.id, newProveedor).then(
