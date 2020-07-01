@@ -24,6 +24,7 @@ import { ServicioListComponent } from './components/servicios/servicio-list/serv
 import { ServicioCreateComponent } from './components/servicios/servicio-create/servicio-create.component';
 import { ServicioComponent } from './components/servicios/servicio/servicio.component';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { AuthInterceptor } from './interceptor/auth.interceptor';
     ServicioListComponent,
     LoginComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, NgMultiSelectDropDownModule.forRoot()],
   providers: [
     ProveedoresService,
     {
@@ -52,4 +53,4 @@ import { AuthInterceptor } from './interceptor/auth.interceptor';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

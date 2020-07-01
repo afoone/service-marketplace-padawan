@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Proveedor } from 'src/app/models/proveedores/proveedor';
 import { ProveedoresService } from 'src/app/service/proveedores.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { IDropdownSettings } from 'ng-multiselect-dropdown';
 
 
 
@@ -13,6 +14,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 export class ProveedorCreateComponent implements OnInit {
 
+  public dropdownList = [];
+  public selectedItems = [];
+  public dropdownSettings: IDropdownSettings = {};
   public nombre = '';
   public descripcion = '';
   public cif = '';
@@ -22,12 +26,33 @@ export class ProveedorCreateComponent implements OnInit {
   private id: string;
 
   constructor(private proveedorService: ProveedoresService,
-              private router: Router,
-              private ruta: ActivatedRoute) { }
+    private router: Router,
+    private ruta: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id = this.ruta.snapshot.paramMap.get('id');
-    if (this.id) {
+
+    this.dropdownList = [
+      { item_id: 1, item_text: 'Mumbai' },
+      { item_id: 2, item_text: 'Bangaluru' },
+      { item_id: 3, item_text: 'Pune' },
+      { item_id: 4, item_text: 'Navsari' },
+      { item_id: 5, item_text: 'New Delhi' }
+    ];
+    this.selectedItems = [
+      { item_id: 3, item_text: 'Pune' },
+      { item_id: 4, item_text: 'Navsari' }
+    ];
+    this.dropdownSettings = {
+      singleSelection: false,
+      idField: 'item_id',
+      textField: 'item_text',
+      selectAllText: 'Select All',
+      unSelectAllText: 'UnSelect All',
+      itemsShowLimit: 3,
+      allowSearchFilter: true
+    };
+    if(this.id) {
       this.proveedorService.getProveedor(this.id).then(
         res => {
           this.nombre = res.nombre;
@@ -40,6 +65,14 @@ export class ProveedorCreateComponent implements OnInit {
       );
     }
   }
+  onItemSelect(item: any) {
+    console.log(item);
+  }
+  onSelectAll(items: any) {
+    console.log(items);
+  }
+
+
 
 
   saveAndRedirect = () => {
@@ -81,5 +114,4 @@ export class ProveedorCreateComponent implements OnInit {
       );
     }
   }
-
 }
