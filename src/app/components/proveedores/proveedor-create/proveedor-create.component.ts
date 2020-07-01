@@ -3,6 +3,8 @@ import { Proveedor } from 'src/app/models/proveedores/proveedor';
 import { ProveedoresService } from 'src/app/service/proveedores.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { ServiciosService } from 'src/app/service/servicios.service';
+//import { ServicioList } from 'src/app/components/servicios/servicio-list';
 
 
 
@@ -13,6 +15,7 @@ import { IDropdownSettings } from 'ng-multiselect-dropdown';
 })
 
 export class ProveedorCreateComponent implements OnInit {
+
 
   public servicioList: any[] = [];
   public selectedItems = [];
@@ -26,21 +29,23 @@ export class ProveedorCreateComponent implements OnInit {
   private id: string;
 
   constructor(private proveedorService: ProveedoresService,
-    private router: Router,
+    private router: Router, private servicioService: ServiciosService,
     private ruta: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.id = this.ruta.snapshot.paramMap.get('id');
 
-    this.servicioList = [
-      { "_id": 1, nombre: 'Mumbai' },
-      { "_id": 2, nombre: 'Bangaluru' },
-      { "_id": 3, nombre: 'Pune' },
-      { "_id": 4, nombre: 'Navsari' },
-      { "_id": 5, nombre: 'New Delhi' }
-    ];
-
-
+    // this.servicioList = [
+    //   { "_id": 1, nombre: 'Mumbai' },
+    //   { "_id": 2, nombre: 'Bangaluru' },
+    //   { "_id": 3, nombre: 'Pune' },
+    //   { "_id": 4, nombre: 'Navsari' },
+    //   { "_id": 5, nombre: 'New Delhi' }
+    // ];
+    //llamarlo desde el interceptor
+    this.servicioService.getServicios().then((res) => {
+      this.servicioList = res;
+    }
+    )
     this.dropdownSettings = {
       singleSelection: false,
       idField: '_id',
@@ -64,6 +69,12 @@ export class ProveedorCreateComponent implements OnInit {
       );
     }
   }
+  // cargarlistaServicios() {
+  //   // this.id = this.ruta.snapshot.paramMap.get('id');
+  //   this.servicioService.getServicios().then((res) => {
+  //     this.servicioList = res;
+  //   }
+  // }
 
   saveAndRedirect = () => {
     this.save(() => this.router.navigate(['proveedor/lista']));
@@ -80,6 +91,7 @@ export class ProveedorCreateComponent implements OnInit {
     });
   }
 
+
   private save = (finish: any) => {
     const newProveedor = new Proveedor();
     newProveedor.nombre = this.nombre;
@@ -88,7 +100,6 @@ export class ProveedorCreateComponent implements OnInit {
     newProveedor.correo = this.correo;
     newProveedor.telefono = this.telefono;
     newProveedor.imagen = this.imagen;
-    //newProveedor.servicio = this.selectedItems.map( i => i._id)
     if (this.id) {
       // estamos editando
       this.proveedorService.updateProveedor(this.id, newProveedor).then(
