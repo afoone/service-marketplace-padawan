@@ -18,7 +18,9 @@ app.use(cors({
   "optionsSuccessStatus": 204
 }));
 
-app.get("/", (req, res) => res.status(200).send("<h2>Server up and running</h2>"));
+//app.get("/", (req, res) => res.status(200).send("<h2>Server up and running</h2>"));
+app.use("/", express.static('server/dist'));
+
 
 // Añadir las rutas 
 app.use("/home/", homeRouter)
