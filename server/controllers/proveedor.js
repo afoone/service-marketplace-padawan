@@ -38,7 +38,7 @@ const proveedorController = {
 
   getProveedores: (req, res) => {
 
-    Proveedor.find({}).populate('servicio').exec(
+    Proveedor.find({}).populate('servicios').exec(
       (err, proveedores) => {
         return err ? res.status(500).jsonp({ error: err, proveedores })
           : res.status(200).jsonp(proveedores);
@@ -49,7 +49,7 @@ const proveedorController = {
   },
 
   getProveedor: (req, res) => {
-    Proveedor.findById(req.params.id).populate('servicio').exec(
+    Proveedor.findById(req.params.id).populate('servicios').exec(
       (err, proveedor) => {
         err ? res.status(404).jsonp({ error: err })
           : res.status(200).jsonp(proveedor);

@@ -10,9 +10,13 @@
       <a class="header"><h1>{{proveedor.nombre}}</h1></a>
     </div>
       <div class="content">
-    <a class="header">
-        Servicios disponibles<br>
-    </a>
+    <div class="header">
+        <ul>
+          <li *ngFor="let item of proveedor.servicios">
+            {{item.nombre}}
+          </li>
+        </ul>
+      </div>
     <div class="meta">
       <span class="date">
         C.I.F.:&nbsp;
