@@ -19,6 +19,7 @@ export class ProveedorCreateComponent implements OnInit {
   public nombre = '';
   public descripcion = '';
   public servicios = [];
+  public serviciosList = [];
   public cif = '';
   public correo = '';
   public telefono = '';
@@ -26,17 +27,18 @@ export class ProveedorCreateComponent implements OnInit {
   private id: string;
 
   constructor(private proveedorService: ProveedoresService,
-    private router: Router, private servicioService: ServiciosService,
+    private route: Router, private servicioService: ServiciosService,
     private ruta: ActivatedRoute) { }
 
   ngOnInit(): void {
 
+    // carga componente servicios(todos)
     this.servicioService.getServicios().then(
       (res) => {
-        this.servicios = res;
+        this.serviciosList = res;
       }
     );
-    // console.log('el servicioList es:' + this.servicioList )
+    this.id = this.ruta.snapshot.paramMap.get('id');
     this.dropdownSettings = {
       singleSelection: false,
       idField: '_id',
@@ -46,27 +48,28 @@ export class ProveedorCreateComponent implements OnInit {
       itemsShowLimit: 5,
       allowSearchFilter: true
     };
+    // Fin carga componente servicios(todos)
+
+    // carga datos proveedor
 
     if (this.id) {
+
       this.proveedorService.getProveedor(this.id).then(
         res => {
           this.nombre = res.nombre;
           this.descripcion = res.descripcion;
-          this.servicios = res.servicios;
+          this.selectedItems = res.servicios;
           this.cif = res.cif;
           this.correo = res.correo;
           this.telefono = res.telefono;
           this.imagen = res.imagen;
         }
+
       );
     }
+
   }
-  // cargarlistaServicios() {
-  //   // this.id = this.ruta.snapshot.paramMap.get('id');
-  //   this.servicioService.getServicios().then((res) => {
-  //     this.servicioList = res;
-  //   }
-  // }
+
 
   saveAndRedirect = () => {
     this.save(() => this.router.navigate(['proveedor/lista']));
@@ -91,7 +94,7 @@ export class ProveedorCreateComponent implements OnInit {
     newProveedor.descripcion = this.descripcion;
 
     newProveedor.servicios = this.selectedItems.map(
-      i => i._id)
+      i => i._id);
     newProveedor.cif = this.cif;
     newProveedor.correo = this.correo;
     newProveedor.telefono = this.telefono;
@@ -112,8 +115,5 @@ export class ProveedorCreateComponent implements OnInit {
         }
       );
     }
-  }
-  gruardarIdes = () => {
-
   }
 }
