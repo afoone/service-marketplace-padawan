@@ -3,8 +3,6 @@ import { Proveedor } from 'src/app/models/proveedores/proveedor';
 import { ProveedoresService } from 'src/app/service/proveedores.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-proveedor-list',
   templateUrl: './proveedor-list.component.html',
@@ -43,7 +41,6 @@ export class ProveedorListComponent implements OnInit {
     );
     }
   }
-
 
   getProveedor(item: any) {
     this.router.navigate(['proveedor/' + item._id]);

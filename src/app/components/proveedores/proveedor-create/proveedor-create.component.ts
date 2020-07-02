@@ -34,14 +34,6 @@ export class ProveedorCreateComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.servicioList = [
-    //   { "_id": 1, nombre: 'Mumbai' },
-    //   { "_id": 2, nombre: 'Bangaluru' },
-    //   { "_id": 3, nombre: 'Pune' },
-    //   { "_id": 4, nombre: 'Navsari' },
-    //   { "_id": 5, nombre: 'New Delhi' }
-    // ];
-    //llamarlo desde el interceptor
     this.servicioService.getServicios().then((res) => {
       this.servicioList = res;
     }
