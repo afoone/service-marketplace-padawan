@@ -14,11 +14,11 @@ import { ServiciosService } from 'src/app/service/servicios.service';
 export class ProveedorCreateComponent implements OnInit {
 
 
-  public servicioList: any[] = [];
   public selectedItems = [];
   public dropdownSettings: IDropdownSettings = {};
   public nombre = '';
   public descripcion = '';
+  public servicios = [];
   public cif = '';
   public correo = '';
   public telefono = '';
@@ -26,15 +26,17 @@ export class ProveedorCreateComponent implements OnInit {
   private id: string;
 
   constructor(private proveedorService: ProveedoresService,
-              private router: Router, private servicioService: ServiciosService,
-              private ruta: ActivatedRoute) { }
+    private router: Router, private servicioService: ServiciosService,
+    private ruta: ActivatedRoute) { }
 
   ngOnInit(): void {
 
-    this.servicioService.getServicios().then((res) => {
-      this.servicioList = res;
-    }
+    this.servicioService.getServicios().then(
+      (res) => {
+        this.servicios = res;
+      }
     );
+    // console.log('el servicioList es:' + this.servicioList )
     this.dropdownSettings = {
       singleSelection: false,
       idField: '_id',
@@ -50,6 +52,7 @@ export class ProveedorCreateComponent implements OnInit {
         res => {
           this.nombre = res.nombre;
           this.descripcion = res.descripcion;
+          this.servicios = res.servicios;
           this.cif = res.cif;
           this.correo = res.correo;
           this.telefono = res.telefono;
@@ -73,22 +76,27 @@ export class ProveedorCreateComponent implements OnInit {
     this.save(() => {
       this.nombre = '';
       this.descripcion = '';
+      this.servicios = [];
       this.cif = '';
       this.correo = '';
       this.telefono = '';
       this.imagen = '';
     });
   }
-
+  // private seleccionarServicio = () => {
+  //   this.servicios.push(this.dropdownSettings.idField);
+  // }
 
   private save = (finish: any) => {
     const newProveedor = new Proveedor();
     newProveedor.nombre = this.nombre;
     newProveedor.descripcion = this.descripcion;
+    newProveedor.servicios = this.servicios;
     newProveedor.cif = this.cif;
     newProveedor.correo = this.correo;
     newProveedor.telefono = this.telefono;
     newProveedor.imagen = this.imagen;
+    console.log('proveedor a guardar :' + newProveedor);
     if (this.id) {
       // estamos editando
       this.proveedorService.updateProveedor(this.id, newProveedor).then(

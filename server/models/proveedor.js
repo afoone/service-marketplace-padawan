@@ -8,7 +8,7 @@ const proveedorSchema = mongoose.Schema({
     correo: String,
     telefono: String,
     imagen: String,
-    servicio: [{ type: mongoose.Schema.Types.ObjectId, ref: "Servicio" }]
+    servicios: [{ type: mongoose.Schema.Types.ObjectId, ref: "Servicio" }]
 }
 )
 
