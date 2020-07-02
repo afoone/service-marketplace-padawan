@@ -4,9 +4,6 @@ import { ProveedoresService } from 'src/app/service/proveedores.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { ServiciosService } from 'src/app/service/servicios.service';
-//import { ServicioList } from 'src/app/components/servicios/servicio-list';
-
-
 
 @Component({
   selector: 'app-proveedor-create',
@@ -29,8 +26,8 @@ export class ProveedorCreateComponent implements OnInit {
   private id: string;
 
   constructor(private proveedorService: ProveedoresService,
-    private router: Router, private servicioService: ServiciosService,
-    private ruta: ActivatedRoute) { }
+              private router: Router, private servicioService: ServiciosService,
+              private ruta: ActivatedRoute) { }
 
   ngOnInit(): void {
 
@@ -41,11 +38,12 @@ export class ProveedorCreateComponent implements OnInit {
     //   { "_id": 4, nombre: 'Navsari' },
     //   { "_id": 5, nombre: 'New Delhi' }
     // ];
-    //llamarlo desde el interceptor
-    this.servicioService.getServicios().then((res) => {
+    // llamarlo desde el interceptor
+    this.servicioService.getServicios().then(
+      (res) => {
       this.servicioList = res;
     }
-    )
+    );
     this.dropdownSettings = {
       singleSelection: false,
       idField: '_id',
