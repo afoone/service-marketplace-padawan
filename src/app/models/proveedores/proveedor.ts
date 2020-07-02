@@ -7,6 +7,7 @@ export class Proveedor {
     public correo: string;
     public telefono: string;
     public imagen: string;
+    public servicio: [];
 
     constructor (){}
 }
