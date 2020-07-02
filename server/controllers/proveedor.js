@@ -48,6 +48,20 @@ const proveedorController = {
 
   },
 
+  getProveedoresByServiceId: (req, res) => {
+    //const idServicio = req.params.id;
+    // Proveedor.find({}).populate('servicios').exec(
+    //   (err, proveedores) => {
+    //     return err ? res.status(500).jsonp({ error: err, proveedores })
+    //       : res.status(200).jsonp(proveedores);
+    //   }
+    // )
+    // {
+    //   servicio: ObjectId(idServico)
+    // }
+
+  },
+
   getProveedor: (req, res) => {
     Proveedor.findById(req.params.id).populate('servicios').exec(
       (err, proveedor) => {
