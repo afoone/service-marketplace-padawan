@@ -83,15 +83,15 @@ export class ProveedorCreateComponent implements OnInit {
       this.imagen = '';
     });
   }
-  // private seleccionarServicio = () => {
-  //   this.servicios.push(this.dropdownSettings.idField);
-  // }
+
 
   private save = (finish: any) => {
     const newProveedor = new Proveedor();
     newProveedor.nombre = this.nombre;
     newProveedor.descripcion = this.descripcion;
-    newProveedor.servicios = this.servicios;
+
+    newProveedor.servicios = this.selectedItems.map(
+      i => i._id)
     newProveedor.cif = this.cif;
     newProveedor.correo = this.correo;
     newProveedor.telefono = this.telefono;
@@ -112,5 +112,8 @@ export class ProveedorCreateComponent implements OnInit {
         }
       );
     }
+  }
+  gruardarIdes = () => {
+
   }
 }

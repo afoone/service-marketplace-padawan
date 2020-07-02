@@ -19,7 +19,7 @@ const proveedorController = {
     // creamos el proveedor
     const proveedor = new Proveedor();
     proveedor.nombre = body.nombre;
-    proveedor.servicio = body.servicio;
+    proveedor.servicios = body.servicios;
     proveedor.descripcion = body.descripcion;
     proveedor.cif = body.cif;
     proveedor.correo = body.correo;
