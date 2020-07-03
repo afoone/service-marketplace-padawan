@@ -27,7 +27,7 @@ export class ProveedorCreateComponent implements OnInit {
   private id: string;
 
   constructor(private proveedorService: ProveedoresService,
-    private route: Router, private servicioService: ServiciosService,
+    private router: Router, private servicioService: ServiciosService,
     private ruta: ActivatedRoute) { }
 
   ngOnInit(): void {
