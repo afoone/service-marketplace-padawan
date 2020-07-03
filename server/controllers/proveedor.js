@@ -1,6 +1,6 @@
 const Proveedor = require('../models/proveedor');
 const Servicio = require('../models/servicio');
-const ObjectId = require('mongoose').Types.ObjectId; 
+const ObjectId = require('mongoose').Types.ObjectId;
 
 const proveedorController = {
 
@@ -77,7 +77,7 @@ const proveedorController = {
         return res.status(404)("<h1>No Encontrado<h1>")
       }//if para modificar solo un elemento si está vacio
       proveedor.nombre = body.nombre;
-      proveedor.servicio = body.servicio;
+      proveedor.servicios = body.servicios;
       proveedor.descripcion = body.descripcion;
       proveedor.cif = body.cif;
       proveedor.correo = body.correo;

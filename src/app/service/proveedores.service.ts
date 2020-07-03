@@ -35,8 +35,12 @@ export class ProveedoresService {
   }
 
   updateProveedor = (id: string, proveedor: Proveedor) => {
+
     return this.httpClient.put<Proveedor>(
-      'http://localhost:4000/proveedor/' + id, proveedor).toPromise();
+      'http://localhost:4000/proveedor/' + id, proveedor).toPromise().then(
+        (res) => {
+        }
+      );
   }
 
   getProveedor = (id: string) => {

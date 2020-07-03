@@ -15,7 +15,6 @@ export class ServicioComponent implements OnInit {
   public id: string;
 
   constructor(private servicioService: ServiciosService, private route: ActivatedRoute) {
-    console.log('mensaje', servicioService.mensaje);
   }
   ngOnInit(): void {
     // Ir a por el servicio y poner en la variable
@@ -32,7 +31,7 @@ export class ServicioComponent implements OnInit {
     );
   }
 
-  
+
 }
 
 

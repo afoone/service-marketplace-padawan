@@ -27,8 +27,8 @@ export class ProveedorCreateComponent implements OnInit {
   private id: string;
 
   constructor(private proveedorService: ProveedoresService,
-    private router: Router, private servicioService: ServiciosService,
-    private ruta: ActivatedRoute) { }
+              private router: Router, private servicioService: ServiciosService,
+              private ruta: ActivatedRoute) { }
 
   ngOnInit(): void {
 
@@ -89,6 +89,7 @@ export class ProveedorCreateComponent implements OnInit {
 
 
   private save = (finish: any) => {
+
     const newProveedor = new Proveedor();
     newProveedor.nombre = this.nombre;
     newProveedor.descripcion = this.descripcion;
@@ -99,10 +100,11 @@ export class ProveedorCreateComponent implements OnInit {
     newProveedor.correo = this.correo;
     newProveedor.telefono = this.telefono;
     newProveedor.imagen = this.imagen;
-    console.log('proveedor a guardar :' + newProveedor);
+
     if (this.id) {
+
       // estamos editando
-      this.proveedorService.updateProveedor(this.id, newProveedor).then(
+        this.proveedorService.updateProveedor(this.id, newProveedor).then(
         () => {
           finish();
         }
