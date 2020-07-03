@@ -19,7 +19,7 @@ export class ProveedoresService {
 
   getProveedoresByServicioId = (id: string) => {
     // TODO:  Consulta a un endpoint
-    //http://localhost:4000/proveedor/service/:id
+    return this.httpClient.get<Proveedor[]>('http://localhost:4000/proveedor/service/' + id).toPromise();
   }
 
   saveProveedor = (proveedor: Proveedor) => {

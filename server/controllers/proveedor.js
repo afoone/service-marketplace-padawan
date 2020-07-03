@@ -1,5 +1,6 @@
 const Proveedor = require('../models/proveedor');
 const Servicio = require('../models/servicio');
+const ObjectId = require('mongoose').Types.ObjectId; 
 
 const proveedorController = {
 
@@ -44,22 +45,20 @@ const proveedorController = {
           : res.status(200).jsonp(proveedores);
       }
     )
-
-
   },
 
   getProveedoresByServiceId: (req, res) => {
-    //const idServicio = req.params.id;
-    // Proveedor.find({}).populate('servicios').exec(
-    //   (err, proveedores) => {
-    //     return err ? res.status(500).jsonp({ error: err, proveedores })
-    //       : res.status(200).jsonp(proveedores);
-    //   }
-    // )
-    // {
-    //   servicio: ObjectId(idServico)
-    // }
-
+    const idServicio = req.params.id;
+     Proveedor.find(
+       {
+          servicios: new ObjectId(idServicio)
+        }
+     ).populate('servicios').exec(
+       (err, proveedores) => {
+         return err ? res.status(500).jsonp({ error: err, proveedores })
+           : res.status(200).jsonp(proveedores);
+       }
+     )
   },
 
   getProveedor: (req, res) => {

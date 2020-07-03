@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ServiciosService } from 'src/app/service/servicios.service';
 import { ActivatedRoute } from '@angular/router';
 import { Servicio } from 'src/app/models/servicios/servicio';
-import { Proveedor } from 'src/app/models/proveedores/proveedor';
 
 @Component({
   selector: 'app-servicio',
@@ -11,8 +10,7 @@ import { Proveedor } from 'src/app/models/proveedores/proveedor';
 })
 export class ServicioComponent implements OnInit {
 
-  public servicio: Servicio = new Servicio();
-  public proveedores: Proveedor[] = [];
+  public servicio: Servicio =new Servicio();
 
   public id: string;
 
@@ -34,13 +32,7 @@ export class ServicioComponent implements OnInit {
     );
   }
 
-  fetchProveedores(id: string) {
-    // TODO: hacer
-    console.log("recuperando proveedores");
-    // al recuperar los proveedores los almacenamos en la variable proveedores
-  }
-
-
+  
 }
 
 
